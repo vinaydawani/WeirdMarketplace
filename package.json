@@ -8,8 +8,10 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@download/blockies": "^1.0.3",
     "@openzeppelin/contracts": "^4.1.0",
     "axios": "^0.21.1",
+    "ethereum-blockies-base64": "^1.0.2",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0",
     "vuex": "^4.0.1",
