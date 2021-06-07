@@ -1,20 +1,15 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <Navbar />
-  </div>
+  <!-- <div class="home"></div> -->
+  <HomeJumbotron></HomeJumbotron>
 </template>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from "@/components/HelloWorld.vue";
-import Navbar from "@/components/Navbar.vue";
+import HomeJumbotron from "@/components/HomeJumbotron.vue";
 
 export default {
   name: "Home",
   components: {
-    // HelloWorld,
-    Navbar,
+    HomeJumbotron,
   },
 };
 </script>

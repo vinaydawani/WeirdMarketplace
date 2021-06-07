@@ -1,21 +1,32 @@
 <template>
-  <button @click="metamaskSign">{{ user }}</button>
+  <header
+    class="flex flex-row justify-between items-center py-px px-6 relative"
+  >
+    <router-link to="/">
+      <img src="../assets/logo.png" class="h-12" />
+    </router-link>
+    <nav class="flex flex-row space-x-12 w-auto p-4 items-center">
+      <router-link to="/">Home</router-link>
+      <router-link to="/about">About</router-link>
+      <router-link to="/create-nft">Create NFT</router-link>
+      <div v-if="this.$store.state.currentUser">
+        <CurrentUserButton></CurrentUserButton>
+      </div>
+      <div v-else>
+        <ConnectWalletButton></ConnectWalletButton>
+      </div>
+    </nav>
+  </header>
 </template>
 
 <script>
+import ConnectWalletButton from "@/components/ConnectWalletButton.vue";
+import CurrentUserButton from "@/components/CurrentUserButton.vue";
+
 export default {
-  data() {
-    return {
-      user: "Sign in",
-    };
-  },
-  methods: {
-    async metamaskSign() {
-      const acc = await window.ethereum.request({
-        method: "eth_requestAccounts",
-      });
-      this.user = acc[0];
-    },
+  components: {
+    ConnectWalletButton,
+    CurrentUserButton,
   },
 };
 </script>

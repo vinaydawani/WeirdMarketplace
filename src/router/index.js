@@ -17,6 +17,13 @@ const routes = [
       return import(/* webpackChunkName: "about" */ "../views/About.vue");
     },
   },
+  {
+    path: "/create-nft",
+    name: "CreateNFT",
+    component: () => {
+      return import("../views/CreateNFT.vue");
+    },
+  },
 ];
 
 const router = createRouter({
