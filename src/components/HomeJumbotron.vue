@@ -1,6 +1,6 @@
 <template>
   <div
-    class="py-20"
+    class="py-32"
     style="background: linear-gradient(90deg, #667eea 0%, #764ba2 100%)"
   >
     <div class="container mx-auto px-6">

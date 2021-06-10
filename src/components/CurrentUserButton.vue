@@ -3,14 +3,13 @@
     id="currentUserButton"
     class="w-60 h-12 border-gray-700 border-solid border-2 rounded-md"
   >
-    <img :src="createBlockie" class="w-6 h-6 mx-2 inline" />
+    <img :src="createBlockie" class="w-6 h-6 mx-2 mb-1 inline" />
     <span class="inline pl-1">{{ getCurrentUser }}</span>
   </button>
 </template>
 
 <script>
 import store from "../store/index";
-// import { createIcon } from "@download/blockies";
 import makeBlockie from "ethereum-blockies-base64";
 
 window.ethereum.on("accountsChanged", function (accounts) {
@@ -32,12 +31,9 @@ export default {
       return userString;
     },
     createBlockie() {
-      // var icon = createIcon({ seed: this.$store.state.currentUser });
-      // console.log(icon);
-      // console.log(this.$refs);
-      // return icon;
       return makeBlockie(this.$store.state.currentUser);
     },
   },
+  components: {},
 };
 </script>
