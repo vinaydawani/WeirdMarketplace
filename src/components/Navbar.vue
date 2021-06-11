@@ -35,6 +35,7 @@ export default {
   },
   computed: {
     hasInjectedEthereum() {
+      // TODO: replace with web3 instance
       return !window.ethereum ? true : false;
     },
   },
