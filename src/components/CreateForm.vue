@@ -1,202 +1,42 @@
 <template>
   <div>
     <form>
-      <!-- <div class="grid w-11/12 md:w-9/12 lg:w-1/2">
-        <div class="flex justify-center py-4">
+      <div class="flex flex-col gap-y-8">
+        <div class="flex flex-col">
+          <label for="input-file" class="form-label"
+            >Image, Video, or Audio *</label
+          >
+          <span class="text-sm"
+            >File types supported: JPG, PNG, GIF, SVG, MP4, WEBM, MP3, WAV, OGG,
+            GLB, GLTF. Max size: 10 MB</span
+          >
           <div
-            class="
-              flex
-              bg-purple-200
-              rounded-full
-              md:p-4
-              p-2
-              border-2 border-purple-300
-            "
+            class="flex items-center justify-center w-1/3 cursor-pointer mt-2"
           >
-            <svg
-              class="w-8 h-8 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
-              ></path>
-            </svg>
-          </div>
-        </div>
-
-        <div class="flex justify-center">
-          <div class="flex">
-            <h1 class="text-gray-600 font-bold md:text-2xl text-xl">
-              Tailwind Form
-            </h1>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 mt-5 mx-7">
-          <label
-            class="
-              uppercase
-              md:text-sm
-              text-xs text-gray-500 text-light
-              font-semibold
-            "
-            >Input 1</label
-          >
-          <input
-            class="
-              py-2
-              px-3
-              rounded-lg
-              border-2 border-purple-300
-              mt-1
-              focus:outline-none
-              focus:ring-2 focus:ring-purple-600
-              focus:border-transparent
-            "
-            type="text"
-            placeholder="Input 1"
-          />
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 mt-5 mx-7">
-          <div class="grid grid-cols-1">
-            <label
-              class="
-                uppercase
-                md:text-sm
-                text-xs text-gray-500 text-light
-                font-semibold
-              "
-              >Input 2</label
-            >
-            <input
-              class="
-                py-2
-                px-3
-                rounded-lg
-                border-2 border-purple-300
-                mt-1
-                focus:outline-none
-                focus:ring-2 focus:ring-purple-600
-                focus:border-transparent
-              "
-              type="text"
-              placeholder="Input 2"
-            />
-          </div>
-          <div class="grid grid-cols-1">
-            <label
-              class="
-                uppercase
-                md:text-sm
-                text-xs text-gray-500 text-light
-                font-semibold
-              "
-              >Input 3</label
-            >
-            <input
-              class="
-                py-2
-                px-3
-                rounded-lg
-                border-2 border-purple-300
-                mt-1
-                focus:outline-none
-                focus:ring-2 focus:ring-purple-600
-                focus:border-transparent
-              "
-              type="text"
-              placeholder="Input 3"
-            />
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 mt-5 mx-7">
-          <label
-            class="
-              uppercase
-              md:text-sm
-              text-xs text-gray-500 text-light
-              font-semibold
-            "
-            >Selection</label
-          >
-          <select
-            class="
-              py-2
-              px-3
-              rounded-lg
-              border-2 border-purple-300
-              mt-1
-              focus:outline-none
-              focus:ring-2 focus:ring-purple-600
-              focus:border-transparent
-            "
-          >
-            <option>Option 1</option>
-            <option>Option 2</option>
-            <option>Option 3</option>
-          </select>
-        </div>
-
-        <div class="grid grid-cols-1 mt-5 mx-7">
-          <label
-            class="
-              uppercase
-              md:text-sm
-              text-xs text-gray-500 text-light
-              font-semibold
-            "
-            >Another Input</label
-          >
-          <input
-            class="
-              py-2
-              px-3
-              rounded-lg
-              border-2 border-purple-300
-              mt-1
-              focus:outline-none
-              focus:ring-2 focus:ring-purple-600
-              focus:border-transparent
-            "
-            type="text"
-            placeholder="Another Input"
-          />
-        </div>
-
-        <div class="grid grid-cols-1 mt-5 mx-7">
-          <label
-            class="
-              uppercase
-              md:text-sm
-              text-xs text-gray-500 text-light
-              font-semibold
-              mb-1
-            "
-            >Upload Photo</label
-          >
-          <div class="flex items-center justify-center w-full">
             <label
               class="
                 flex flex-col
                 border-4 border-dashed
                 w-full
-                h-32
+                h-40
                 hover:bg-gray-100
-                hover:border-purple-300
+                hover:border-blue-300
+                cursor-pointer
                 group
               "
             >
-              <div class="flex flex-col items-center justify-center pt-7">
+              <div
+                class="
+                  flex flex-col
+                  items-center
+                  justify-center
+                  content-center
+                  pt-9
+                  cursor-pointer
+                "
+              >
                 <svg
-                  class="w-10 h-10 text-purple-400 group-hover:text-purple-600"
+                  class="w-10 h-10 text-gray-400 group-hover:text-blue-600"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -210,10 +50,11 @@
                   ></path>
                 </svg>
                 <p
+                  id="file-name"
                   class="
                     lowercase
                     text-sm text-gray-400
-                    group-hover:text-purple-600
+                    group-hover:text-blue-600
                     pt-1
                     tracking-wider
                   "
@@ -221,56 +62,61 @@
                   Select a photo
                 </p>
               </div>
-              <input type="file" class="hidden" />
+              <input
+                type="file"
+                @change="displayFile"
+                class="hidden cursor-pointer"
+                accept=".jpg, .png, .gif, .svg, .mp4, .webm, .mp3, .wav, .pdf"
+                required
+              />
             </label>
           </div>
         </div>
-
-        <div class="flex items-center justify-center md:gap-8 gap-4 pt-5 pb-5">
-          <button
-            class="
-              w-auto
-              bg-gray-500
-              hover:bg-gray-700
-              rounded-lg
-              shadow-xl
-              font-medium
-              text-white
-              px-4
-              py-2
-            "
+        <div class="flex flex-col">
+          <label for="input-title" class="form-label">Title*</label>
+          <input type="text" id="input-title" class="form-input" required />
+        </div>
+        <div class="flex flex-col">
+          <label for="input-external-link" class="form-label"
+            >External Link</label
           >
-            Cancel
-          </button>
+          <input type="url" id="input-external-link" class="form-input" />
+        </div>
+        <div class="flex flex-col">
+          <label for="input-description" class="form-label">Description</label>
+          <textarea id="input-description" class="resize form-input" />
+        </div>
+        <div class="flex items-center justify-center">
           <button
-            class="
-              w-auto
-              bg-purple-500
-              hover:bg-purple-700
-              rounded-lg
-              shadow-xl
-              font-medium
-              text-white
-              px-4
-              py-2
-            "
+            type="submit"
+            class="w-40 h-12 border-gray-700 border-solid border-2 rounded-md"
           >
-            Create
+            Submit
           </button>
         </div>
-      </div> -->
-      <div>
-        <label for="input-file"></label>
-        <input type="file" id="input-file" accept="image/*" />
-      </div>
-      <div>
-        <label for="input-title"></label>
-        <input type="text" id="input-title" />
-      </div>
-      <div>
-        <label for="input-description"></label>
-        <input type="textarea" id="input-description" />
       </div>
     </form>
   </div>
 </template>
+
+<script>
+export default {
+  methods: {
+    displayFile(e) {
+      const name = e.target.files[0].name;
+      console.log(name);
+      document.getElementById("file-name").innerHTML = name;
+    },
+  },
+};
+</script>
+
+<style>
+.form-label {
+  @apply uppercase md:text-sm text-xs text-gray-500 font-semibold;
+}
+
+.form-input {
+  @apply py-1 px-3 mt-1 rounded-md border border-gray-600 focus:ring-2 ring-blue-300 focus:outline-none focus:border-transparent;
+}
+</style>

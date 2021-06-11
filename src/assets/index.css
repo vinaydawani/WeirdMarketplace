@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* @layer components {
+  .form-label {
+    @apply uppercase md:text-sm text-xs text-gray-500 font-semibold;
+  }
+} */
