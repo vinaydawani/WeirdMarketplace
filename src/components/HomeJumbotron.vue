@@ -1,5 +1,6 @@
 <template>
   <div
+    id="homeJumbotron"
     class="py-32"
     style="background: linear-gradient(90deg, #667eea 0%, #764ba2 100%)"
   >
@@ -19,3 +20,9 @@ export default {
   components: { ConnectWalletButton },
 };
 </script>
+
+<style>
+#homeJumbotron {
+  text-align: center;
+}
+</style>
