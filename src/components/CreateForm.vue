@@ -167,7 +167,9 @@ export default {
     pinToIPFS() {
       // console.log(this.formData);
       // const form = document.getElementById("NFTForm");
-      this.pinImage().then((data) => console.log(data.data));
+      this.pinImage()
+        .then((data) => this.createMetadata(data.data))
+        .then((metadata) => this.pinMetadata(metadata));
     },
 
     async pinImage() {
@@ -188,7 +190,30 @@ export default {
       );
       return x;
     },
-    createMetadata(ipfsHash) {},
+    createMetadata(ipfsHash) {
+      return JSON.stringify({
+        title: "Asset Metadata",
+        properties: {
+          name: this.formData.title,
+          description: this.formData.description,
+          image: "https://ipfs.io/ipfs/" + ipfsHash.IpfsHash,
+          external_uri: this.formData.url,
+        },
+      });
+    },
+    async pinMetadata(metadata) {
+      return await axios.post(
+        "https://api.pinata.cloud/pinning/pinJSONToIPFS",
+        metadata,
+        {
+          headers: {
+            pinata_api_key: "6ba02cfa7b5a88c13412",
+            pinata_secret_api_key:
+              "d32fa29c707ecb249b209a0a783ba2bc7bf165eca672a5b6cf4c7443c55ab955",
+          },
+        }
+      );
+    },
   },
 };
 </script>
